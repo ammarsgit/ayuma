@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuma House Planning | California's Premier Construction Planning Solutions</title>
+    <title>Ayuma House Planning</title>
     <style>
-        /* Variables for easy customization */
+         /* Variables for easy customization */
         :root {
             --primary: #ff6b35; /* Vibrant orange */
             --secondary: #2c3e50;
@@ -114,7 +116,7 @@
         /* Header */
         header {
             background-color: rgba(255, 255, 255, 0.95);
-            padding: 15px 0;
+            padding: 10px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -200,6 +202,95 @@
             cursor: pointer;
         }
         
+        /* Quick Links Styles */
+        .quick-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+        
+        .quick-links-menu {
+            display: none; /* Hide by default */
+            flex-direction: column;
+            position: absolute;
+            top: 100%; /* Position below the toggle button */
+            right: 0;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px;
+            z-index: 1000;
+        }
+        
+        .quick-links-menu.active {
+            display: flex; /* Show the menu when active */
+        }
+        
+        .quick-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .quick-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .quick-link:hover {
+            color: var(--primary);
+        }
+        
+        .quick-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Dropdown Toggle Button */
+        .quick-links-toggle {
+            display: none; /* Hide by default */
+            cursor: pointer;
+            font-size: 1.5rem; /* Larger icon size */
+            color: var(--secondary);
+        }
+        
+        /* Responsive Styles for Quick Links */
+        @media (max-width: 768px) {
+            .quick-links {
+                position: relative;
+            }
+        
+            .quick-links-menu {
+                display: none; /* Hide the menu by default on smaller screens */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Position below the toggle button */
+                right: 0;
+                background: white;
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                padding: 10px;
+                z-index: 1000;
+            }
+        
+            .quick-links-menu.active {
+                display: flex; /* Show the menu when active */
+            }
+        }
+       
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--hero-image, url('/api/placeholder/1200/600')) no-repeat center center;
@@ -366,7 +457,7 @@
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
+            /*transform: translateY(-25px);*/
         }
         
         .service-card:hover:before {
@@ -965,36 +1056,36 @@
             opacity: 0.6;
         }
         
-        .footer-newsletter p {
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }
+        /*.footer-newsletter p {*/
+        /*    opacity: 0.8;*/
+        /*    margin-bottom: 20px;*/
+        /*}*/
         
-        .newsletter-form {
-            display: flex;
-        }
+        /*.newsletter-form {*/
+        /*    display: flex;*/
+        /*}*/
         
-        .newsletter-input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            font-size: 0.9rem;
-        }
+        /*.newsletter-input {*/
+        /*    flex: 1;*/
+        /*    padding: 12px 15px;*/
+        /*    border: none;*/
+        /*    border-radius: var(--border-radius) 0 0 var(--border-radius);*/
+        /*    font-size: 0.9rem;*/
+        /*}*/
         
-        .newsletter-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0 20px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+        /*.newsletter-btn {*/
+        /*    background: var(--primary);*/
+        /*    color: white;*/
+        /*    border: none;*/
+        /*    padding: 0 20px;*/
+        /*    border-radius: 0 var(--border-radius) var(--border-radius) 0;*/
+        /*    cursor: pointer;*/
+        /*    transition: var(--transition);*/
+        /*}*/
         
-        .newsletter-btn:hover {
-            background: #e55a29;
-        }
+        /*.newsletter-btn:hover {*/
+        /*    background: #e55a29;*/
+        /*}*/
         
         .footer-bottom {
             text-align: center;
@@ -1159,6 +1250,79 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* New styles for the About Us section */
+        .about-us {
+            background-color: white;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .about-us h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-us-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-us-text {
+            flex: 1;
+        }
+
+        .about-us-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-us-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .owner-statement {
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .owner-statement h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .owner-statement p {
+            font-style: italic;
+            color: var(--secondary);
+        }
+
+        .owner-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .owner-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: var(--border-radius);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1166,9 +1330,20 @@
     <header>
         <div class="container nav-wrapper">
             <a href="#" class="logo">
-                <!--<i class="logo-icon">🏠</i>-->
                 <span>Ayuma House Planning</span> 
             </a>
+            
+            <!-- Quick Links Section -->
+            <div class="quick-links">
+                <div class="quick-links-menu">
+                    <a href="#home" class="quick-link">Home</a>
+                    <a href="#services" class="quick-link">Services</a>
+                    <a href="#portfolio" class="quick-link">Portfolio</a>
+                    <a href="#about" class="quick-link">About</a>
+                    <a href="#contact" class="quick-link">Contact</a>
+                </div>
+            </div>
+            
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -1187,9 +1362,8 @@
     <!-- Hero Section -->
     <section class="hero animate" id="home">
         <div class="hero-content">
-            <span class="hero-subtitle">California's Premier Construction Planning</span>
+            <span class="hero-subtitle">Premier Construction Planning</span>
             <h1>Designing Dreams, Building Futures</h1>
-            <p>We specialize in creating innovative and sustainable plans tailored to your lifestyle and needs.</p>
             <a href="#services" class="btn">Explore Services</a>
             <a href="#contact" class="btn btn-outline">Get Started</a>
         </div>
@@ -1209,7 +1383,7 @@
                 <div class="service-card">
                     <i class="service-icon">📐</i>
                     <h3>Custom Design</h3>
-                    <p>Tailored designs that reflect your unique style and needs.</p>
+                    <p>Get a blueprint made with your needs.</p>
                 </div>
                 <div class="service-card">
                     <i class="service-icon">🏗️</i>
@@ -1217,9 +1391,30 @@
                     <p>Transform your existing space with our expert renovation plans.</p>
                 </div>
                 <div class="service-card">
-                    <i class="service-icon">🌿</i>
-                    <h3>Sustainable Solutions</h3>
-                    <p>Eco-friendly designs for a greener future.</p>
+                    <i class="service-icon">❓</i>
+                    <h3>Card 3</h3>
+                    <p>Card 3 message.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us animate" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-us-content">
+                <div class="about-us-text">
+                    <h3>Our Story</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="owner-statement">
+                        <h4>A Message from Our Founder</h4>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    </div>
+                </div>
+                <div class="owner-image">
+                    <img src="https://via.placeholder.com/400" alt="Owner's Picture">
                 </div>
             </div>
         </div>
@@ -1245,7 +1440,7 @@
                         <img src="https://via.placeholder.com/350x300" alt="Project 1">
                         <div class="portfolio-overlay">
                             <span class="portfolio-category">Residential</span>
-                            <h3>Modern Family Home</h3>
+                            <h3>Residential Example 1</h3>
                             <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1253,7 +1448,7 @@
                         <img src="https://via.placeholder.com/350x300" alt="Project 2">
                         <div class="portfolio-overlay">
                             <span class="portfolio-category">Commercial</span>
-                            <h3>Office Space Design</h3>
+                            <h3>Commercial Example 1</h3>
                             <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1261,7 +1456,7 @@
                         <img src="https://via.placeholder.com/350x300" alt="Project 3">
                         <div class="portfolio-overlay">
                             <span class="portfolio-category">Renovation</span>
-                            <h3>Kitchen Remodel</h3>
+                            <h3>Renovation Example 1</h3>
                             <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1284,14 +1479,14 @@
                         <!--<i class="contact-icon">📍</i>-->
                         <div class="contact-text">
                             <strong>Address</strong>
-                            <span>123 California St, San Francisco, CA</span>
+                            <span>1250 El Cajon Boulevard #74 El Cajon, CA 92020</span>
                         </div>
                     </div>
                     <div class="contact-item">
                         <!--<i class="contact-icon">📞</i>-->
                         <div class="contact-text">
                             <strong>Phone</strong>
-                            <span>(123) 456-7890</span>
+                            <span>(619) 456-8979</span>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1305,7 +1500,7 @@
                 <div class="contact-form">
                     <h3>Send a Message</h3>
                     <!-- Updated Form with Formspree -->
-                    <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <form action="https://formspree.io/f/xldjgpke" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -1330,6 +1525,7 @@
             </div>
         </div>
     </section>
+
     <!-- Footer Section -->
     <footer>
         <div class="container footer-container">
@@ -1355,19 +1551,20 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-newsletter">
-                <h3 class="footer-heading">Newsletter</h3>
-                <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Your email">
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
-                </form>
-            </div>
+            <!--<div class="footer-newsletter">-->
+            <!--    <h3 class="footer-heading">Newsletter</h3>-->
+            <!--    <p>Subscribe to our newsletter for the latest updates and offers.</p>-->
+            <!--    <form class="newsletter-form">-->
+            <!--        <input type="email" class="newsletter-input" placeholder="Your email">-->
+            <!--        <button type="submit" class="newsletter-btn">Subscribe</button>-->
+            <!--    </form>-->
+            <!--</div>-->
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Ayuma House Planning. All rights reserved.</p>
+            <p>&copy; 2025 Ayuma House Planning. All rights reserved.</p>
         </div>
     </footer>
+
     <!-- Back to Top Button -->
     <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
@@ -1413,6 +1610,20 @@
     
         // Call the function to initialize scroll animations
         animateOnScroll();
+
+        // Dropdown Toggle for Quick Links
+        document.addEventListener('DOMContentLoaded', () => {
+        const quickLinksMenu = document.querySelector('.quick-links-menu');
+    
+        if (quickLinksMenu) {
+            document.addEventListener('click', (event) => {
+                if (!quickLinksMenu.contains(event.target)) {
+                    quickLinksMenu.classList.remove('active');
+                }
+            });
+        }
+    });
+        
 
         // Portfolio Filtering
         const portfolioTabs = document.querySelectorAll('.portfolio-tab');
